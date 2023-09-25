@@ -1,0 +1,45 @@
+body {
+  background-color: #343a40; /* Set your desired dark background color */
+  color: #ffffff; /* Set your desired text color for dark background */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif; /* Set your desired font-family */
+}
+
+/* For WebKit (Chrome, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity */
+  border-radius: 20px; /* Adjust the radius for the pill shape */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Adjust the color and opacity */
+}
+
+/* For Internet Explorer and Edge */
+/* Note: IE and Edge have limited support for scrollbar styling */
+/* The following styles may not work in all versions */
+*::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity */
+  border-radius: 20px; /* Adjust the radius for the pill shape */
+}

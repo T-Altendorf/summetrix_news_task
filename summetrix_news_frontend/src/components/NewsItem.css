@@ -1,0 +1,12 @@
+.news-item{
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 1em;
+    background-color: #343a40;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.news-hyperlink{
+    color: inherit;
+    text-decoration: none;
+}

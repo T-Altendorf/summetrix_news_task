@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+
+# Compiled Python files
+__pycache__/
+
+# Logs and databases
+*.log
+*.db
+
+# Environment variables
+.env
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+
+# Dependencies (if using pip)
+pip-lock.txt
+
+# Compiled files (if using a compiled language)
+*.pyc
+*.pyo
+
+# Local configuration
+instance/
+config.py
