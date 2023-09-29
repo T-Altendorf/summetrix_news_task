@@ -20,9 +20,24 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const [language, setLanguage] = useState("en");
   const [fromDate, setFromDate] = useState(getOneMonthAgo());
   const [toDate, setToDate] = useState(new Date().toISOString().split("T")[0]);
+  const [error, setError] = useState<string | null>(null); // State for error messages
 
   const handleSearch = () => {
+    if (searchTerm == "") {
+      console.log("Please enter a search term.");
+      setError("Please enter a search term.");
+      return;
+    }
+
+    setError(null);
+
     onSearch(searchTerm, language, fromDate, toDate);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   function getOneMonthAgo() {
@@ -34,6 +49,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <Fragment>
       <div className="search-bar">
+        {error && <div className="alert alert-danger text-center">{error}</div>}
         <div className="row mb-4">
           <div className="col-md-4">
             Search term
@@ -42,6 +58,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
               className="form-control"
               placeholder="Search..."
               value={searchTerm}
+              required={true}
+              onKeyDown={handleKeyPress}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
@@ -76,8 +94,20 @@ const SearchBar: React.FC<SearchBarProps> = ({
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             >
-              <option value="en">English</option>
               <option value="de">German</option>
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="he">Hebrew</option>
+              <option value="it">Italian</option>
+              <option value="nl">Dutch</option>
+              <option value="ar">Arabic</option>
+              <option value="no">Norwegian</option>
+              <option value="pt">Portuguese</option>
+              <option value="ru">Russian</option>
+              <option value="sv">Swedish</option>
+              <option value="ud">Undefined</option>
+              <option value="zh">Chinese</option>
               {/* Add more language options */}
             </select>
           </div>

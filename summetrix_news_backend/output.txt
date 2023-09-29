@@ -1,0 +1,34 @@
+Folder PATH listing for volume Windows
+Volume serial number is 48FB-12AD
+C:.
+|   .env
+|   .gitignore
+|   app.py
+|   config.py
+|   db.py
+|   env_production_template.env
+|   extensions.py
+|   init_db.py
+|   output.txt
+|   requirements.txt
+|   
++---api
+|   |   news.py
+|   |   
+|   \---__pycache__
+|           news.cpython-311.pyc
+|      
++---models
+|   |   news.py
+|   |   
+|   \---__pycache__
+|           news.cpython-311.pyc
+|           
+
++---tests
+\---__pycache__
+        app.cpython-311.pyc
+        config.cpython-311.pyc
+        extensions.cpython-311.pyc
+        __init__.cpython-311.pyc
+        

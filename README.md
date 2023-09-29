@@ -13,7 +13,6 @@ Follow these steps to set up and run the project locally.
    ```shell
    git clone <repository_url>
    cd news-search-engine
-   Create a virtual environment (optional but recommended):
    ```
 
 2. Create a virtual environment (optional but recommended):
@@ -40,8 +39,34 @@ Follow these steps to set up and run the project locally.
 
 5. Run the Flask backend:
 
-```shell
-python app.py
-```
+   ```shell
+   python app.py
+   ```
 
 The backend should now be running at http://localhost:5000.
+
+### Frontend (Vite, React, TypeScript)
+
+1. Install Node.js:
+
+   Install Node.js from https://nodejs.org/en/download/
+
+2. Navigate to the `frontend` directory:
+
+   ```shell
+   cd summetrix_news_frontend
+   ```
+
+3. Install Node.js dependencies:
+
+   ```shell
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```shell
+   npm run dev
+   ```
+
+   The frontend should now be running at http://localhost:3000.

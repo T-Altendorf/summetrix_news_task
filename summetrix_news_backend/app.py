@@ -2,26 +2,26 @@ from flask import Flask
 from flask_cors import CORS
 from extensions import db, ma
 
+from config import DevelopmentConfig
+
 def register_extensions(app):
     db.init_app(app) 
     ma.init_app(app)
 
-def create_app():
-    # create and configure the app
+def create_app(config_class=DevelopmentConfig):
+    # Create the Flask app
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///newsapp.db'
+    app.config.from_object(config_class)
 
     register_extensions(app)
 
     CORS(app, resources={r"/*": {"origins": "*"}})
-
-    # load the config
-    app.config.from_pyfile('config.py', silent=True)
+    
+    # Register the blueprint under '/api'
     from api.news import news_api
-    app.register_blueprint(news_api, url_prefix='/api')  # Register the blueprint under '/api'
+    app.register_blueprint(news_api, url_prefix='/api') 
 
     return app
-# Import and register API blueprints
 
 app = create_app()
 
