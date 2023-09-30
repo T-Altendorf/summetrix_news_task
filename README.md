@@ -99,3 +99,5 @@ You can then build using
 ```shell
 npm run build
 ```
+
+and then upload the files in the "dist" folder to your webspace.
