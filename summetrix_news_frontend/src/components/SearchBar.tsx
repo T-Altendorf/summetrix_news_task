@@ -9,18 +9,19 @@ interface SearchBarProps {
   ) => void;
   onViewingFavorites: (viewingFavorites: boolean) => void;
   viewingFavorites: boolean;
+  setError: (error: string | null) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   onSearch,
   onViewingFavorites,
   viewingFavorites,
+  setError,
 }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [language, setLanguage] = useState("en");
   const [fromDate, setFromDate] = useState(getOneMonthAgo());
   const [toDate, setToDate] = useState(new Date().toISOString().split("T")[0]);
-  const [error, setError] = useState<string | null>(null); // State for error messages
 
   const handleSearch = () => {
     if (searchTerm == "") {
@@ -49,7 +50,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <Fragment>
       <div className="search-bar">
-        {error && <div className="alert alert-danger text-center">{error}</div>}
         <div className="row mb-4">
           <div className="col-md-4">
             Search term

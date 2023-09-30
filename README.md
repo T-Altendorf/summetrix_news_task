@@ -70,3 +70,17 @@ The backend should now be running at http://localhost:5000.
    ```
 
    The frontend should now be running at http://localhost:3000.
+
+## Deployment
+
+### Backend (Flask)
+
+See the [Flask deployment guide](https://flask.palletsprojects.com/en/2.0.x/deploying/) for more information.
+
+Make sure to set environment variables, including NEWS_API_KEY, in your hosting environment. There is a env_production_template.env file that needs to be renamed to .env and filled out with the appropriate values.
+
+After deploying, your Flask backend should be accessible via a public URL provided by the hosting platform.
+
+### Frontend (Vite, React, TypeScript)
+
+See the [Vite deployment guide](https://vitejs.dev/guide/build.html#command-line-interface) for more information.

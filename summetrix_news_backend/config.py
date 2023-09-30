@@ -1,3 +1,4 @@
+import json
 import os
 from dotenv import load_dotenv
 
@@ -9,7 +10,7 @@ class Config:
         "SQLALCHEMY_DATABASE_URI", "sqlite:///newsapp.db"
     )
     NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
-    CORS_RESOURCES = os.environ.get("CORS_RESOURCES", {r"/*": {"origins": "*"}})
+    CORS_ORIGINS = json.loads(os.environ.get("CORS_ORIGINS", '["*"]'))
     DEBUG = os.environ.get("DEBUG", False)
     # You can add more configurations as needed
 

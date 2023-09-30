@@ -1,3 +1,4 @@
+import json
 from flask import Flask
 from flask_cors import CORS
 from extensions import db, ma
@@ -17,7 +18,7 @@ def create_app(config_class=Config):
 
     register_extensions(app)
 
-    CORS(app, resources=app.config["CORS_RESOURCES"])
+    CORS(app, resources={r"/*": {"origins": app.config["CORS_ORIGINS"]}})
 
     # Register the blueprint under '/api'
     from api.news import news_api
