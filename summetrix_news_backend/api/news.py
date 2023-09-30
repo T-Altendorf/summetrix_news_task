@@ -12,11 +12,11 @@ news_api = Blueprint('news_api', __name__)
 @news_api.route('/news', methods=['GET'])
 def get_news():
     try:
-        # Get search term and language from query parameters
+        # Get search term and language 
         search_term = request.args.get('search')
         language = request.args.get('language')
         
-        # Get the 'from' and 'to' date query parameters (if provided)
+        # Get the 'from' and 'to' date 
         from_date_str = request.args.get('from')
         to_date_str = request.args.get('to')
 

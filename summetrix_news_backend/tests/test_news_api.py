@@ -36,7 +36,6 @@ class NewsAPITestCase(unittest.TestCase):
         self.assertIsNotNone(news_in_db)
         
     def test_add_favorite_news_with_insufficient_data(self):
-        # Create JSON data with missing required fields (title and url)
         data = {
             "description": "Test Description",
             "author": "Test Author",
@@ -57,7 +56,7 @@ class NewsAPITestCase(unittest.TestCase):
         
     
     def test_delete_favorite_news(self):
-    # Given: A news entry exists in the database.
+        # Given: A news entry exists in the database.
         test_url = "http://test.url"
         news_item = News(
             url=test_url,
@@ -70,16 +69,13 @@ class NewsAPITestCase(unittest.TestCase):
             )
         db.session.add(news_item)
         db.session.commit()
-        # When: We send a DELETE request to the endpoint.
+        
         response = self.client.delete(f'/api/news/favorite/{test_url}')
-        # Then: We expect a successful response.
+        
         self.assertEqual(response.status_code, 200)
-        # And: The news item should no longer exist in the database.
+        
         deleted_news = News.query.get(test_url)
         self.assertIsNone(deleted_news)
-        # Optionally: Validate the returned JSON (if necessary)
-        # response_data = response.get_json()
-        # self.assertEqual(response_data["title"], "Test Title")  # Or any other field you wish to validate.
 
 if __name__ == '__main__':
     unittest.main()
