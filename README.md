@@ -2,6 +2,8 @@
 
 This project is a News Search Engine with a Flask backend and a Node.js frontend.
 
+Demo Hosted at [summetrix.timalti.com](https://summetrix.timalti.com)
+
 ## Getting Started
 
 Follow these steps to set up and run the project locally.
@@ -31,11 +33,10 @@ Follow these steps to set up and run the project locally.
 
 4. Set up environment variables:
 
-   TODO - add instructions for environments
-
-   ```shell
-   NEWS_API_KEY=<your_api_key>
-   ```
+   SECRET_KEY='secret key'
+   SQLALCHEMY_DATABASE_URI='database_uri'
+   NEWS_API_KEY='news_api_key' # The news api key
+   CORS_Origins="['*']" # allowed origins as a json list string
 
 5. Run the Flask backend:
 
@@ -69,7 +70,7 @@ The backend should now be running at http://localhost:5000.
    npm run dev
    ```
 
-   The frontend should now be running at http://localhost:3000.
+   The frontend should now be running on localhost. Check the port from the command line.
 
 ## Deployment
 
@@ -79,8 +80,18 @@ See the [Flask deployment guide](https://flask.palletsprojects.com/en/2.0.x/depl
 
 Make sure to set environment variables, including NEWS_API_KEY, in your hosting environment. There is a env_production_template.env file that needs to be renamed to .env and filled out with the appropriate values.
 
+You can get a newsapi.org API key by signing up for a free account at https://newsapi.org/account.
+
 After deploying, your Flask backend should be accessible via a public URL provided by the hosting platform.
 
 ### Frontend (Vite, React, TypeScript)
 
 See the [Vite deployment guide](https://vitejs.dev/guide/build.html#command-line-interface) for more information.
+
+Dont forget to set the REACT_APP_API_URL environment variable to the URL of your Flask backend before building and then saving it to the .env.production file provided in the root folder.
+
+You can then build using
+
+```shell
+npm run build
+```

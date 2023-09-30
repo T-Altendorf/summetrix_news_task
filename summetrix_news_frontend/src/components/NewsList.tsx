@@ -54,7 +54,7 @@ const NewsList: React.FC<NewsListProps> = ({
         ) : emptyResult ? (
           <h3>There were no results for your search term.</h3>
         ) : (
-          <h3>Search for news to display the here</h3>
+          <h3>Search for news to display them here</h3>
         )}
       </div>
     );
