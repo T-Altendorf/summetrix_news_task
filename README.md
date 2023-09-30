@@ -33,6 +33,8 @@ Follow these steps to set up and run the project locally.
 
 4. Set up environment variables:
 
+   You can use the template given in "env_production_template.env" and then rename to ".env"
+
    ```
    SECRET_KEY='secret key'
    SQLALCHEMY_DATABASE_URI='database_uri'
