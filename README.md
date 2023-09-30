@@ -33,10 +33,12 @@ Follow these steps to set up and run the project locally.
 
 4. Set up environment variables:
 
+   ```
    SECRET_KEY='secret key'
    SQLALCHEMY_DATABASE_URI='database_uri'
    NEWS_API_KEY='news_api_key' # The news api key
    CORS_Origins="['*']" # allowed origins as a json list string
+   ```
 
 5. Run the Flask backend:
 
