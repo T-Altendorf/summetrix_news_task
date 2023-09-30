@@ -94,7 +94,7 @@ After deploying, your Flask backend should be accessible via a public URL provid
 
 See the [Vite deployment guide](https://vitejs.dev/guide/build.html#command-line-interface) for more information.
 
-Dont forget to set the REACT_APP_API_URL environment variable to the URL of your Flask backend before building and then saving it to the .env.production file provided in the root folder.
+Dont forget to set the VITE_API_URL environment variable to the URL of your Flask backend before building and then saving it to the .env.production file provided in the root folder.
 
 You can then build using
 
