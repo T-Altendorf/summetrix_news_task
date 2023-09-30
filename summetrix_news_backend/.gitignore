@@ -24,3 +24,6 @@ pip-lock.txt
 
 # Local configuration
 instance/
+
+# zipfile
+*.zip

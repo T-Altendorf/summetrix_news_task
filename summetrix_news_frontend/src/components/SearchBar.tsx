@@ -25,7 +25,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const handleSearch = () => {
     if (searchTerm == "") {
-      console.log("Please enter a search term.");
       setError("Please enter a search term.");
       return;
     }

@@ -14,7 +14,6 @@ function App() {
 
   // Retrieve favorite news articles when the component mounts
   useEffect(() => {
-    console.log("Ran use effect");
     const fetchFavoriteNews = async () => {
       try {
         setError(null);
