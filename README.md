@@ -15,8 +15,8 @@ Follow these steps to set up and run the project locally.
 1. Clone the repository:
 
    ```shell
-   git clone <repository_url>
-   cd news-search-engine
+   git clone https://github.com/T-Altendorf/summetrix_news_task
+   cd summetrix_news_backend
    ```
 
 2. Create a virtual environment (optional but recommended):
