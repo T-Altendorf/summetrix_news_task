@@ -47,9 +47,7 @@ export const addToFavorites = async (newsData: any) => {
 };
 
 export const removeFromFavorites = async (newsData: any) => {
-  const url = `${API_BASE_URL}/news/favorite/${encodeURIComponent(
-    newsData.url
-  )}`;
+  const url = `${API_BASE_URL}/news/favorite/${newsData.id}`;
   const response = await fetch(url, {
     method: "DELETE",
     headers: {

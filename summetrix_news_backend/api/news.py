@@ -1,4 +1,5 @@
 # api/news.py
+from urllib.parse import urljoin
 from flask import Blueprint, abort, request, jsonify, current_app
 import requests
 from datetime import datetime, timedelta
@@ -122,9 +123,10 @@ def get_favorite_news():
 
 
 # Delete Favorite News
-@news_api.route("/news/favorite/<path:url>", methods=["DELETE"])
-def delete_favorite_news(url):
-    news = News.query.get(url)
+@news_api.route("/news/favorite/<int:id>", methods=["DELETE"])
+def delete_favorite_news(id):
+    # some webservers remove double slashes
+    news = News.query.get(id)
 
     if news is None:
         # Handle the case where the news item does not exist with a 404 Not Found response

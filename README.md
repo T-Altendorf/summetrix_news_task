@@ -1,6 +1,8 @@
 # News Search Engine
 
-This project is a News Search Engine with a Flask backend and a Node.js frontend.
+This project is a simple News Search Engine with a Flask backend and a Node.js frontend.
+
+It has the ability to save favorite articles to a database and to search for articles using the newsapi.org API.
 
 Demo Hosted at [summetrix.timalti.com](https://summetrix.timalti.com)
 
