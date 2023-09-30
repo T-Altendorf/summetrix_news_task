@@ -43,8 +43,12 @@ Follow these steps to set up and run the project locally.
    NEWS_API_KEY='news_api_key' # The news api key
    CORS_Origins="['*']" # allowed origins as a json list string
    ```
+5. Initialize the database 
+   ```shell
+   python init_db.py
+   ```
 
-5. Run the Flask backend:
+6. Run the Flask backend:
 
    ```shell
    python app.py
